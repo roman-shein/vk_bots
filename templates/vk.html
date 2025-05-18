@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class="activities">Activities</h1>
+
+    <div style="margin-left: 5%; margin-right: 5%">
+        <table>
+            <tr class="table_purple">
+                <td>likes</td>
+                <td>{{ likes }}</td>
+            </tr> <!--ряд с ячейками заголовков-->
+            <tr class="table_purple">
+                <td>comments</td>
+                <td>{{comments}}</td>
+            </tr> <!--ряд с ячейками тела таблицы-->
+            <tr class="table_purple">
+                <td>subscribed</td>
+                <td>{{subscribed}}</td>
+            </tr>
+        </table><br>
+     </div>
+
+    <div style="margin-left: 5%; margin-right: 5%">
+        <h1 class="ages">Ages</h1>
+        <table>
+            {% for elem in age %}
+            <tr class="table_ages_left">
+                <td>{{ elem[0] }}</td>
+                <td class="table_ages_right">{{ elem[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table><br>
+    </div>
+
+    <div style="margin-left: 5%; margin-right: 5%">
+        <h1 class="cities">Cities</h1>
+        <table>
+        {% for city in cities %}
+                <tr class="table_orange">
+                    <td>{{city}}</td>
+                </tr>
+            {% endfor %}
+        </table><br>
+    </div>
+
+
+{% endblock %}
